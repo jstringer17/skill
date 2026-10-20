@@ -56,3 +56,14 @@ This is your shortcut to great interfaces. A shortcut to stand out in a sea of s
 - **[mobile-native](./skills/mobile-native/SKILL.md)** — Make your web app feel native on a phone: sticky hover states, tap highlight flashes, the 100vh bug, inputs that zoom the page, laggy taps, safe areas, and the rest of the small fixes that separate a website from an app.
 - **[break-ui](./skills/break-ui/SKILL.md)** — Try to break the UI you built with worst-case data: long names, unusual emails, one-letter names, huge counts, empty lists, long labels.
 - **[ask-sonner](./skills/ask-sonner/SKILL.md)** — Your guide to working with [Sonner](https://sonner.emilkowal.ski), my toast library. Contains setup, styling, recipes, and fixes for the most common issues.
+
+## Workflow skills
+
+Six prompts that change how Claude works on a task. On a real task, use them in this order: **interview-me**, then **implementation-spec**, then **verify-before-build**, then **build-skill**. Bring in **launch-subagents** for research during the first two steps. Save **automate-this** for after a skill has run enough times that you trust it.
+
+- **[interview-me](./skills/interview-me/SKILL.md)** — Asks one question at a time until the job is clear enough to hand to a stranger.
+- **[implementation-spec](./skills/implementation-spec/SKILL.md)** — Writes the plan first: files, order, risks, what's out of scope, and the three calls you'll most likely disagree with. No code until you say go.
+- **[verify-before-build](./skills/verify-before-build/SKILL.md)** — Picks how to prove the change works before building it, then reports in a fixed VERIFIED / NOT VERIFIED block.
+- **[build-skill](./skills/build-skill/SKILL.md)** — Turns what the conversation worked out into a reusable skill written as instructions.
+- **[launch-subagents](./skills/launch-subagents/SKILL.md)** — Splits independent work across parallel sub-agents and reconciles them into one answer.
+- **[automate-this](./skills/automate-this/SKILL.md)** — Plans an automation (what runs, when, what it touches, how it fails, where it logs) and waits for your review before setting anything up.
