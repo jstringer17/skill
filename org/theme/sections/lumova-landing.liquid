@@ -1,0 +1,217 @@
+{{ 'https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap' | stylesheet_tag }}
+{{ 'lumova.css' | asset_url | stylesheet_tag }}
+{%- assign cur = product.selected_or_first_available_variant -%}
+{%- assign form_id = 'lmv-form-' | append: section.id -%}
+{%- assign hero_h = section.settings.hero_heading | default: product.title -%}
+{%- capture star -%}<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.2 7.1L21 12l-6.8 2.9L12 22l-2.2-7.1L3 12l6.8-2.9z"/></svg>{%- endcapture -%}
+
+<div class="lmv" style="--accent:{{ section.settings.accent }};--bg:{{ section.settings.bg }};--band:{{ section.settings.band }}">
+
+  <header class="lmv-hero">
+    <div class="lmv-wrap">
+      <div>
+        <span class="lmv-spark">{{ star }}</span>
+        <h1 class="lmv-h1">{{ hero_h | replace: '[', '<span class="lmv-circ">' | replace: ']', '</span>' }}</h1>
+        <p class="lmv-sub">{{ section.settings.subhead }}</p>
+        <div class="lmv-cta">
+          <a class="lmv-btn" href="#buy">{{ section.settings.cta1 }}</a>
+          <a class="lmv-btn lmv-btn--ghost" href="#how">{{ section.settings.cta2 }}</a>
+        </div>
+      </div>
+      <div class="lmv-arch">
+        {%- if product.featured_media -%}
+          {{ product.featured_media | image_url: width: 900 | image_tag: loading: 'eager', alt: product.featured_media.alt | default: product.title, widths: '450, 700, 900', sizes: '(min-width: 980px) 380px, 90vw' }}
+        {%- elsif section.settings.hero_image -%}
+          {{ section.settings.hero_image | image_url: width: 900 | image_tag: loading: 'eager', alt: product.title }}
+        {%- else -%}
+          <div class="lmv-ph">{{ product.title }}</div>
+        {%- endif -%}
+      </div>
+      <div class="lmv-side">
+        {%- if section.settings.stat_big != blank -%}
+        <div class="lmv-stat"><b>{{ section.settings.stat_big }}</b><span>{{ section.settings.stat_small }}</span></div>
+        {%- endif -%}
+        <svg class="lmv-spin" viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="lmvc-{{ section.id }}" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+          <text><textPath href="#lmvc-{{ section.id }}">{{ section.settings.badge_text }} &#8226; {{ section.settings.badge_text }} &#8226; {{ section.settings.badge_text }} &#8226;</textPath></text>
+          <path d="M60 46l3 8.5 8.5 3-8.5 3-3 8.5-3-8.5-8.5-3 8.5-3z" fill="currentColor"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  {%- if section.settings.marquee != blank -%}
+  <div class="lmv-ribbon" aria-hidden="true">
+    <div class="lmv-track">{%- for i in (1..4) -%}<span>{{ section.settings.marquee }}</span>{%- endfor -%}</div>
+  </div>
+  {%- endif -%}
+
+  <section class="lmv-sec" id="buy" style="padding-top:36px"><div class="lmv-wrap">
+    <div class="lmv-head">
+      <p class="lmv-kick">{{ product.title }}</p>
+      <h2 class="lmv-h2">{{ section.settings.choose_heading | replace: '[', '<span class="lmv-circ">' | replace: ']', '</span>' }}</h2>
+      <p class="lmv-lead">{{ section.settings.choose_sub }}</p>
+    </div>
+    {%- form 'product', product, id: form_id, class: 'lmv-form' -%}
+      <div class="lmv-buy">
+        <fieldset class="lmv-opts">
+          <legend class="lmv-sr">Choose your option</legend>
+          {%- for variant in product.variants -%}
+            <label class="lmv-opt">
+              <input type="radio" name="id" value="{{ variant.id }}" data-price="{{ variant.price | money }}" {% if variant == cur %}checked{% endif %} {% unless variant.available %}disabled{% endunless %}>
+              <span class="lmv-tile">
+                {%- if variant.compare_at_price > variant.price -%}<span style="position:absolute;top:26px;left:26px;z-index:1;background:var(--accent);color:#fff;padding:4px 12px;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.04em">Save {{ variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price }}%</span>{%- endif -%}
+                <span class="lmv-tile-img">
+                  {%- if variant.featured_image -%}{{ variant.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: variant.title }}
+                  {%- elsif product.featured_media -%}{{ product.featured_media | image_url: width: 600 | image_tag: loading: 'lazy', alt: variant.title }}
+                  {%- else -%}{{ star }}{%- endif -%}
+                </span>
+                <span class="lmv-tile-row"><span class="lmv-tile-t">{{ variant.title }}</span><span class="lmv-tile-p">{{ variant.price | money }}</span></span>
+              </span>
+            </label>
+          {%- endfor -%}
+        </fieldset>
+      </div>
+      <div class="lmv-actions">
+        <div class="lmv-row">
+          <div class="lmv-qty">
+            <button type="button" aria-label="Decrease quantity" data-lmv-dec>&minus;</button>
+            <input type="number" name="quantity" value="1" min="1" max="10" aria-label="Quantity">
+            <button type="button" aria-label="Increase quantity" data-lmv-inc>+</button>
+          </div>
+          <button type="submit" name="add" class="lmv-btn" {% unless cur.available %}disabled{% endunless %}>{% if cur.available %}Add to cart &middot; <span class="lmv-price" data-lmv-price>{{ cur.price | money }}</span>{% else %}Sold out{% endif %}</button>
+        </div>
+        {{ form | payment_button }}
+        <ul class="lmv-trust">
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{{ section.settings.shipping_note }}</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{{ section.settings.trust_two }}</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Secure checkout</span></li>
+        </ul>
+        {%- if section.settings.guarantee != blank -%}<p class="lmv-guar">{{ section.settings.guarantee }}</p>{%- endif -%}
+      </div>
+    {%- endform -%}
+  </div></section>
+
+  {%- assign hl = section.blocks | where: 'type', 'highlight' -%}
+  {%- if hl.size > 0 -%}
+  <section class="lmv-sec lmv-band"><div class="lmv-wrap">
+    <div class="lmv-head"><h2 class="lmv-h2">{{ section.settings.hl_heading | replace: '[', '<span class="lmv-circ">' | replace: ']', '</span>' }}</h2></div>
+    <div class="lmv-grid">
+      {%- for b in hl -%}
+        <div class="lmv-card" {{ b.shopify_attributes }}><span class="lmv-num">{{ forloop.index }}</span><h3>{{ b.settings.title }}</h3><p>{{ b.settings.text }}</p></div>
+      {%- endfor -%}
+    </div>
+  </div></section>
+  {%- endif -%}
+
+  {%- assign rows = section.blocks | where: 'type', 'row' -%}
+  {%- if rows.size > 0 -%}
+  <section class="lmv-sec"><div class="lmv-wrap">
+    <div class="lmv-head"><h2 class="lmv-h2">{{ section.settings.cmp_heading | replace: '[', '<span class="lmv-circ">' | replace: ']', '</span>' }}</h2></div>
+    <div class="lmv-cmp">
+      <div class="lmv-cmp-r"><div></div><div>{{ section.settings.cmp_us }}</div><div>{{ section.settings.cmp_them }}</div></div>
+      {%- for b in rows -%}
+        <div class="lmv-cmp-r" {{ b.shopify_attributes }}><div class="lmv-cmp-l">{{ b.settings.label }}</div><div>{{ b.settings.us }}</div><div>{{ b.settings.them }}</div></div>
+      {%- endfor -%}
+    </div>
+  </div></section>
+  {%- endif -%}
+
+  {%- if section.settings.math_big != blank -%}
+  <section class="lmv-sec lmv-math"><div class="lmv-wrap">
+    <div class="lmv-big">{{ section.settings.math_big }}</div>
+    <p>{{ section.settings.math_text }}</p>
+  </div></section>
+  {%- endif -%}
+
+  {%- assign steps = section.blocks | where: 'type', 'step' -%}
+  {%- if steps.size > 0 -%}
+  <section class="lmv-sec lmv-band" id="how"><div class="lmv-wrap">
+    <div class="lmv-head"><p class="lmv-kick">{{ section.settings.steps_kicker }}</p><h2 class="lmv-h2">{{ section.settings.steps_heading | replace: '[', '<span class="lmv-circ">' | replace: ']', '</span>' }}</h2></div>
+    <ol class="lmv-steps">
+      {%- for b in steps -%}
+        <li class="lmv-card" {{ b.shopify_attributes }}><span class="lmv-num">{{ forloop.index }}</span><h3>{{ b.settings.title }}</h3><p>{{ b.settings.text }}</p></li>
+      {%- endfor -%}
+    </ol>
+  </div></section>
+  {%- endif -%}
+
+  {%- assign faqs = section.blocks | where: 'type', 'faq' -%}
+  {%- if faqs.size > 0 -%}
+  <section class="lmv-sec"><div class="lmv-wrap lmv-faqwrap">
+    <div><h2 class="lmv-h2">{{ section.settings.faq_heading | replace: '[', '<span class="lmv-circ">' | replace: ']', '</span>' }}</h2><p class="lmv-lead">{{ section.settings.faq_sub }}</p></div>
+    <div class="lmv-faq">
+      {%- for b in faqs -%}
+        <details {{ b.shopify_attributes }}><summary>{{ b.settings.q }}</summary><p>{{ b.settings.a }}</p></details>
+      {%- endfor -%}
+    </div>
+  </div></section>
+  {%- endif -%}
+
+  {%- assign apps = section.blocks | where: 'type', '@app' -%}
+  {%- if apps.size > 0 -%}
+  <section class="lmv-sec"><div class="lmv-wrap">
+    <div class="lmv-head"><h2 class="lmv-h2">{{ section.settings.reviews_heading | replace: '[', '<span class="lmv-circ">' | replace: ']', '</span>' }}</h2></div>
+    <div style="margin-top:40px">{%- for b in apps -%}{% render b %}{%- endfor -%}</div>
+  </div></section>
+  {%- endif -%}
+
+  <section class="lmv-sec lmv-band lmv-final"><div class="lmv-wrap">
+    <h2 class="lmv-h2">{{ section.settings.final_heading }}</h2>
+    <p>{{ section.settings.final_sub }}</p>
+    <a class="lmv-btn" href="#buy">{{ section.settings.final_cta }}</a>
+  </div></section>
+
+  <div class="lmv-bar" data-lmv-bar role="region" aria-label="Quick add to cart">
+    <div><div style="font-size:.8rem;color:var(--muted)">{{ product.title }}</div><b data-lmv-price>{{ cur.price | money }}</b></div>
+    <button type="submit" form="{{ form_id }}" name="add" class="lmv-btn" {% unless cur.available %}disabled{% endunless %}>{% if cur.available %}Add to cart{% else %}Sold out{% endif %}</button>
+  </div>
+</div>
+<script src="{{ 'lumova.js' | asset_url }}" defer></script>
+<script type="application/ld+json">{{ product | structured_data }}</script>
+
+{% schema %}
+{
+  "name": "Lumova landing",
+  "settings": [
+    {"type":"color","id":"accent","label":"Accent color","default":"#A4553B"},
+    {"type":"color","id":"bg","label":"Page background","default":"#FDF5F1"},
+    {"type":"color","id":"band","label":"Tinted band background","default":"#F8E6DD"},
+    {"type":"image_picker","id":"hero_image","label":"Hero image (used if product has none)"},
+    {"type":"text","id":"hero_heading","label":"Hero heading (wrap a word in [brackets] to circle it)"},
+    {"type":"textarea","id":"subhead","label":"Hero subtext","default":"A short promise about the product."},
+    {"type":"text","id":"cta1","label":"Primary button","default":"Shop now"},
+    {"type":"text","id":"cta2","label":"Secondary button","default":"How it works"},
+    {"type":"text","id":"stat_big","label":"Hero stat (big)"},
+    {"type":"text","id":"stat_small","label":"Hero stat (small)"},
+    {"type":"text","id":"badge_text","label":"Spinning badge text","default":"SHOP NOW"},
+    {"type":"text","id":"marquee","label":"Ribbon text","default":"Add a benefit here  *  "},
+    {"type":"text","id":"choose_heading","label":"Buy section heading","default":"Choose your [option]"},
+    {"type":"textarea","id":"choose_sub","label":"Buy section subtext"},
+    {"type":"text","id":"shipping_note","label":"Shipping note","default":"Ships in 7 to 15 business days"},
+    {"type":"text","id":"trust_two","label":"Second trust line","default":"Refills available any time"},
+    {"type":"textarea","id":"guarantee","label":"Guarantee text (hidden when empty)"},
+    {"type":"text","id":"hl_heading","label":"Highlights heading","default":"Built around what [matters]"},
+    {"type":"text","id":"cmp_heading","label":"Comparison heading","default":"Side by [side]"},
+    {"type":"text","id":"cmp_us","label":"Our column label","default":"Lumova"},
+    {"type":"text","id":"cmp_them","label":"Other column label","default":"The usual way"},
+    {"type":"text","id":"math_big","label":"Big number or phrase"},
+    {"type":"textarea","id":"math_text","label":"Big number explanation"},
+    {"type":"text","id":"steps_kicker","label":"Steps kicker","default":"How it works"},
+    {"type":"text","id":"steps_heading","label":"Steps heading","default":"Four simple [steps]"},
+    {"type":"text","id":"faq_heading","label":"FAQ heading","default":"Questions, [answered]"},
+    {"type":"textarea","id":"faq_sub","label":"FAQ subtext","default":"Everything to know before you order."},
+    {"type":"text","id":"reviews_heading","label":"Reviews heading","default":"What customers [say]"},
+    {"type":"text","id":"final_heading","label":"Final heading","default":"Ready when you are."},
+    {"type":"textarea","id":"final_sub","label":"Final subtext"},
+    {"type":"text","id":"final_cta","label":"Final button label","default":"Get yours"}
+  ],
+  "blocks": [
+    {"type":"@app"},
+    {"type":"highlight","name":"Highlight","settings":[{"type":"text","id":"title","label":"Title","default":"Highlight"},{"type":"textarea","id":"text","label":"Text","default":"Short description."}]},
+    {"type":"row","name":"Comparison row","settings":[{"type":"text","id":"label","label":"Label"},{"type":"text","id":"us","label":"Us"},{"type":"text","id":"them","label":"Them"}]},
+    {"type":"step","name":"Step","settings":[{"type":"text","id":"title","label":"Title"},{"type":"textarea","id":"text","label":"Text"}]},
+    {"type":"faq","name":"Question","settings":[{"type":"text","id":"q","label":"Question"},{"type":"textarea","id":"a","label":"Answer"}]}
+  ]
+}
+{% endschema %}
