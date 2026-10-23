@@ -1,19 +1,123 @@
-{"sections":{"main":{"type":"lumova-landing","blocks":{
-"h1":{"type":"highlight","settings":{"title":"Everything in one box","text":"Razor, stand, and 10 blades. Nothing else to buy to get started."}},
-"h2":{"type":"highlight","settings":{"title":"Safety guard","text":"A guard bar sits under the blade so only the edge meets your skin."}},
-"h3":{"type":"highlight","settings":{"title":"Steel handle","text":"A knurled grip that stays steady in wet, soapy hands."}},
-"h4":{"type":"highlight","settings":{"title":"Blades anywhere","text":"Any standard double-edge blade fits. Packs are sold at most drugstores and online."}},
-"r1":{"type":"row","settings":{"label":"Blades","us":"1 double-edge blade","them":"3 to 5 blades in a plastic head"}},
-"r2":{"type":"row","settings":{"label":"Pressure","us":"Light strokes, no pressing","them":"Often pressed to get a close shave"}},
-"r3":{"type":"row","settings":{"label":"Refills","us":"Cents per blade","them":"Often several dollars per cartridge"}},
-"r4":{"type":"row","settings":{"label":"In the box","us":"Razor, stand, 10 blades","them":"Often one razor and a few cartridges"}},
-"s1":{"type":"step","settings":{"title":"Prepare","text":"Shave after a warm shower and use a cream or gel."}},
-"s2":{"type":"step","settings":{"title":"Find the angle","text":"Rest the head flat on your skin, then tilt the handle down until the blade meets it, about 30 degrees."}},
-"s3":{"type":"step","settings":{"title":"Let it glide","text":"Short, light strokes, with the direction of growth first."}},
-"s4":{"type":"step","settings":{"title":"Finish","text":"Rinse with cool water and moisturize. Change the blade every 5 to 7 shaves, and rest the razor on its stand."}},
-"q1":{"type":"faq","settings":{"q":"Will I cut myself?","a":"Most nicks come from pressing down. Hold the razor lightly and keep your strokes short."}},
-"q2":{"type":"faq","settings":{"q":"Which blades fit?","a":"Any standard double-edge safety razor blade, 43 mm by 22 mm."}},
-"q3":{"type":"faq","settings":{"q":"Can I travel with it?","a":"The razor can go in a carry-on. Pack loose blades in checked luggage."}},
-"q4":{"type":"faq","settings":{"q":"How long does shipping take?","a":"Orders ship in 7 to 15 business days."}}},
-"block_order":["h1","h2","h3","h4","r1","r2","r3","r4","s1","s2","s3","s4","q1","q2","q3","q4"],
-"settings":{"accent":"#A4553B","bg":"#FDF3EE","band":"#F9E2D7","hero_heading":"One blade. One [pass]. Less plastic.","subhead":"A steel safety razor with a knurled grip. One double-edge blade, a safety guard, a stand, and 10 blades in the box.","stat_big":"10","stat_small":"blades in the box","marquee":"Solid steel handle  *  Stand included  *  10 blades in the box  *  Less plastic  *","choose_heading":"Choose your [set]","choose_sub":"Rose gold razor, stand, and 10 double-edge blades.","shipping_note":"Ships in 7 to 15 business days","trust_two":"Standard blades fit, buy them anywhere","hl_heading":"Simple on [purpose]","cmp_heading":"Lumova vs. a cartridge [razor]","cmp_them":"Cartridge razor","math_big":"Cents per blade","math_text":"Standard double-edge blades come in packs and cost a fraction of a cartridge refill, so changing them often never feels like a tax.","steps_kicker":"How to shave","steps_heading":"Four [steps]","final_heading":"Switch to one blade.","final_sub":"Includes the rose gold razor, a stand, and 10 double-edge blades.","final_cta":"Get the set"}}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "lumova-single",
+      "blocks": {
+        "box_item_1": {
+          "type": "box_item",
+          "settings": {
+            "qty": "1",
+            "name": "Rose gold safety razor",
+            "note": ""
+          }
+        },
+        "box_item_2": {
+          "type": "box_item",
+          "settings": {
+            "qty": "1",
+            "name": "Razor stand",
+            "note": "Keeps it upright and dry"
+          }
+        },
+        "box_item_3": {
+          "type": "box_item",
+          "settings": {
+            "qty": "10",
+            "name": "Double-edge blades",
+            "note": ""
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "Prepare",
+            "text": "Shave after a warm shower and use a shaving cream or gel."
+          }
+        },
+        "step_5": {
+          "type": "step",
+          "settings": {
+            "title": "Find the angle",
+            "text": "Hold the head flat, then tilt the handle down until the blade touches, about 30 degrees."
+          }
+        },
+        "step_6": {
+          "type": "step",
+          "settings": {
+            "title": "Glide",
+            "text": "Short, light strokes with no pressing. Go with the direction of growth first."
+          }
+        },
+        "step_7": {
+          "type": "step",
+          "settings": {
+            "title": "Rinse and rest",
+            "text": "Rinse and dry the razor, then set it on its stand. Change the blade when it starts to pull."
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "q": "Is a safety razor hard to use?",
+            "a": "It takes a shave or two to find the angle. Hold it lightly and keep strokes short; pressing down is the usual cause of nicks."
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "q": "Can I travel with it?",
+            "a": "Pack the razor and loose blades in checked luggage. Check your airline's rules before you fly."
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "q": "How much is shipping and how long does it take?",
+            "a": "Shipping is free in the US. Orders ship in 7 to 15 business days."
+          }
+        }
+      },
+      "block_order": [
+        "box_item_1",
+        "box_item_2",
+        "box_item_3",
+        "step_4",
+        "step_5",
+        "step_6",
+        "step_7",
+        "faq_8",
+        "faq_9",
+        "faq_10"
+      ],
+      "settings": {
+        "accent": "#A4553B",
+        "bg": "#FDF3EE",
+        "band": "#F9E2D7",
+        "hero_ph": "Hero shot: rose gold razor on its stand (L2)",
+        "hero_heading": "One blade. [No] cartridges.",
+        "subhead": "A rose gold safety razor with its own stand and 10 double-edge blades, all in one box.",
+        "cta_label": "Get the razor set",
+        "ribbon": "Free US shipping * Stand included * 10 blades in the box",
+        "choose_heading": "Choose your [set]",
+        "choose_sub": "One set, everything included.",
+        "offer_variants": "",
+        "show_express": false,
+        "shipping_line": "Free US shipping",
+        "shipping_todo": true,
+        "ship_time": "Ships in 7 to 15 business days",
+        "trust_two": "10 double-edge blades in the box",
+        "guarantee": "",
+        "box_heading": "What's in the [box]",
+        "steps_heading": "Four steps to a good [shave]",
+        "math_big": "",
+        "math_text": "",
+        "faq_heading": "Questions, [answered]",
+        "final_heading": "Switch to [one] blade.",
+        "final_cta": "Get the razor set"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

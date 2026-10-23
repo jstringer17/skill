@@ -1,19 +1,150 @@
-{"sections":{"main":{"type":"lumova-landing","blocks":{
-"h1":{"type":"highlight","settings":{"title":"The whole setup","text":"Showerhead, 1.5 m hose, arm adapter with holder, thread tape, and 5 filter cartridges, all in one box."}},
-"h2":{"type":"highlight","settings":{"title":"Replaceable cartridge","text":"Five cartridges are included. Refills are sold separately, so you only replace what wears out."}},
-"h3":{"type":"highlight","settings":{"title":"Soft massage nozzles","text":"A ring of silicone bristles around the spray face, with three spray settings."}},
-"h4":{"type":"highlight","settings":{"title":"Refills that stay cheap","text":"A 3-pack of refill cartridges is $19.99, about $6.66 each."}},
-"r1":{"type":"row","settings":{"label":"In the box","us":"Head, hose, arm adapter, tape, 5 cartridges","them":"Usually just the head"}},
-"r2":{"type":"row","settings":{"label":"Spray","us":"Three settings, soft massage nozzles","them":"Often one setting"}},
-"r3":{"type":"row","settings":{"label":"Upkeep","us":"New cartridge every 2 to 3 months","them":"None"}},
-"r4":{"type":"row","settings":{"label":"Monthly cost","us":"About $3 in refills","them":"$0"}},
-"s1":{"type":"step","settings":{"title":"Unscrew","text":"Remove your current showerhead from the shower arm."}},
-"s2":{"type":"step","settings":{"title":"Adapt","text":"Wrap the tape around the arm's thread and screw on the adapter."}},
-"s3":{"type":"step","settings":{"title":"Connect","text":"Attach the hose to the adapter and the showerhead to the other end."}},
-"s4":{"type":"step","settings":{"title":"Rest and flush","text":"Set the head in the holder, run the water for 30 seconds, then shower as normal."}},
-"q1":{"type":"faq","settings":{"q":"Does it come with everything?","a":"Yes. The Complete Set includes the showerhead, a 1.5 m hose, an arm adapter with a built-in holder, thread seal tape, and 5 cartridges. If you want to keep your own hose, choose the showerhead and cartridges only."}},
-"q2":{"type":"faq","settings":{"q":"Will it fit my shower?","a":"It is made for standard shower arms. If it does not fit, message us and we will sort it out."}},
-"q3":{"type":"faq","settings":{"q":"How often do I change the cartridge?","a":"Every 2 to 3 months, depending on how much you shower and what your water is like."}},
-"q4":{"type":"faq","settings":{"q":"How long does shipping take?","a":"Orders ship in 7 to 15 business days."}}},
-"block_order":["h1","h2","h3","h4","r1","r2","r3","r4","s1","s2","s3","s4","q1","q2","q3","q4"],
-"settings":{"accent":"#2F6F6B","bg":"#F2F9F8","band":"#DDEFEC","hero_heading":"A better shower, the whole [setup]","subhead":"A handheld showerhead with soft massage nozzles, a hose, an arm adapter with holder, and a replaceable filter cartridge system. Everything you need, in one box.","stat_big":"5","stat_small":"cartridges included","marquee":"Complete shower setup  *  Soft massage nozzles  *  Refills from $6.66  *  Hose and adapter included  *  ","choose_heading":"Choose your [kit]","choose_sub":"Get the complete setup, or keep your hose and add the head and cartridges.","shipping_note":"Ships in 7 to 15 business days","trust_two":"Refill cartridges from $6.66 each","hl_heading":"Built for how you actually [shower]","cmp_heading":"Lumova vs. a standard [showerhead]","cmp_them":"Standard head","math_big":"About $3 a month","math_text":"That is what a fresh cartridge costs when you buy the 3-pack of refills at $19.99 and swap one every 2 to 3 months.","steps_heading":"Four steps to a new [shower]","final_heading":"Start with a better shower.","final_sub":"The Complete Set has the showerhead, hose, arm adapter, tape, and 5 cartridges, about a year of use.","final_cta":"Get the Complete Set"}}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "lumova-single",
+      "blocks": {
+        "box_item_1": {
+          "type": "box_item",
+          "settings": {
+            "qty": "1",
+            "name": "Handheld showerhead",
+            "note": ""
+          }
+        },
+        "box_item_2": {
+          "type": "box_item",
+          "settings": {
+            "qty": "1",
+            "name": "Shower hose",
+            "note": "1.5 m"
+          }
+        },
+        "box_item_3": {
+          "type": "box_item",
+          "settings": {
+            "qty": "1",
+            "name": "Arm adapter with holder",
+            "note": "Screws onto your shower arm"
+          }
+        },
+        "box_item_4": {
+          "type": "box_item",
+          "settings": {
+            "qty": "1",
+            "name": "Thread seal tape",
+            "note": "For a snug fit on the arm"
+          }
+        },
+        "box_item_5": {
+          "type": "box_item",
+          "settings": {
+            "qty": "5",
+            "name": "Cartridges",
+            "note": "Replaceable, refills sold as a 3-pack"
+          }
+        },
+        "step_6": {
+          "type": "step",
+          "settings": {
+            "title": "Unscrew",
+            "text": "Remove your current showerhead from the shower arm."
+          }
+        },
+        "step_7": {
+          "type": "step",
+          "settings": {
+            "title": "Adapt",
+            "text": "Wrap the tape around the arm's thread and screw on the adapter."
+          }
+        },
+        "step_8": {
+          "type": "step",
+          "settings": {
+            "title": "Connect",
+            "text": "Attach the hose to the adapter and the showerhead to the other end."
+          }
+        },
+        "step_9": {
+          "type": "step",
+          "settings": {
+            "title": "Run it",
+            "text": "Set the head in the holder, run the water for 30 seconds, then shower as usual."
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "q": "Does it come with everything?",
+            "a": "Yes. The Complete Set includes the showerhead, a 1.5 m hose, an arm adapter with a built-in holder, thread seal tape and 5 cartridges."
+          }
+        },
+        "faq_11": {
+          "type": "faq",
+          "settings": {
+            "q": "Will it fit my shower?",
+            "a": "It is made for standard shower arms with a standard thread. If you are unsure, check that your current showerhead unscrews from a threaded arm."
+          }
+        },
+        "faq_12": {
+          "type": "faq",
+          "settings": {
+            "q": "What does a refill cost?",
+            "a": "The Refill 3-Pack is $22.99 for 3 cartridges, about $7.66 each."
+          }
+        },
+        "faq_13": {
+          "type": "faq",
+          "settings": {
+            "q": "How much is shipping and how long does it take?",
+            "a": "Shipping is free in the US. Orders ship in 7 to 15 business days."
+          }
+        }
+      },
+      "block_order": [
+        "box_item_1",
+        "box_item_2",
+        "box_item_3",
+        "box_item_4",
+        "box_item_5",
+        "step_6",
+        "step_7",
+        "step_8",
+        "step_9",
+        "faq_10",
+        "faq_11",
+        "faq_12",
+        "faq_13"
+      ],
+      "settings": {
+        "accent": "#2F6F6B",
+        "bg": "#F2F9F8",
+        "band": "#DDEFEC",
+        "hero_ph": "Hero shot: showerhead resting in its holder (L2)",
+        "hero_heading": "The whole shower [setup], in one box",
+        "subhead": "A handheld shower set: the showerhead, a hose, an arm adapter with holder, thread tape and 5 cartridges, all in one box.",
+        "cta_label": "Choose your set",
+        "ribbon": "Free US shipping * 5 cartridges included * Hose and adapter in the box * Refills $22.99 for 3",
+        "choose_heading": "Choose your [set]",
+        "choose_sub": "The Complete Set has everything to swap your showerhead today.",
+        "offer_variants": "67743537692920,67743537725688",
+        "secondary_note": "The Refill 3-Pack is for people who already own the set.",
+        "show_express": false,
+        "shipping_line": "Free US shipping",
+        "shipping_todo": true,
+        "ship_time": "Ships in 7 to 15 business days",
+        "trust_two": "Refill 3-Pack $22.99 whenever you need it",
+        "guarantee": "",
+        "box_heading": "What's in the [box]",
+        "steps_heading": "Four steps to a new [shower]",
+        "math_big": "About $7.66 a cartridge",
+        "math_text": "Five cartridges come in the box. When you need more, the Refill 3-Pack is $22.99 for 3.",
+        "faq_heading": "Questions, [answered]",
+        "final_heading": "Start with the whole [setup].",
+        "final_cta": "Choose your set"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

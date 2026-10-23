@@ -2,8 +2,14 @@
 
 Written 2026-10-22 from the cloud session "AI dropshipping store brainstorm" (branch `claude/youthful-cerf-wtuztd`). It is meant to let a brand-new session continue with no memory of the chat. Facts marked **verified** were read from Shopify or a supplier page; **unverified** means taken from a listing title, estimate, or the user.
 
-## 0. Read this first
-- **Another session or agent has also been editing the same Shopify store.** Live state differs from what this session built: the Refill 3-Pack is now $22.99, and an archived product "Lumova Shower + Razor Bundle" ($99.99) exists that this session never created. A pasted report from the user also mentioned a "site builder L7", a cancelled $99.99 bundle, a changed "organic only, no ads" rule, and a commit `8432352`. None of that happened in this session and commit `8432352` is not in this repo. **Before acting, read the live Shopify state and ask the user which statements are current.**
+## 0. Read this first (corrected 2026-10-23 after the user said the first handoff was not accurate)
+- **A parallel session has been editing the same Shopify store and theme, and this file's first version missed it.** The user confirmed its report is current. Verified in Shopify on 2026-10-23, after this session's last write:
+  - Shower product renamed from "Lumova Filtered Handheld Showerhead" to **"Lumova Handheld Shower Set"** (updated 2026-10-22 22:17 UTC). Its description was rewritten shorter and no longer says "gunmetal" or "chrome".
+  - Refill 3-Pack price changed from $19.99 to **$22.99**.
+  - A product **"Lumova Shower + Razor Bundle" at $99.99** (id 15436976750840, tags bundle/draft-test, no photo) was created and is now **ARCHIVED** (the user says it was cancelled).
+  - Both product templates (`product.lumova-shower.json`, `product.lumova-razor.json`) were rewritten at 2026-10-22 22:15 UTC: new hero headings ("The whole shower [setup], in one box"; "One blade. [No] cartridges."), new subheads, and longer FAQs (13 and 10 blocks) that say free US shipping and 7 to 15 business days. The repo copies in `theme/templates/` were re-synced from live on 2026-10-23.
+  - The section, CSS and JS files are unchanged from what this session wrote (last updated 2026-10-20).
+- The user's pasted report from that other session also said: this handoff was stale; "organic only, no ads" **has changed** (the new ad plan is not known to this session; ask the user); a **site builder agent "L7" has not reported back**, its commit is not in this repo, so do not call the pages done until it reports; and a rewrite of a handoff was pushed as commit `8432352`. That commit does not exist in `jstringer17/skill`; it is probably in another repo. Check there before assuming.
 - Product pages are DRAFT, the storefront is password-locked, nothing is live. The launch gates (section 8) have not been run.
 - Supporting files in this folder: `research/` (Luminyx reference, domains, suppliers and margins), `prompts/` (Higgsfield and local-browser prompts), `policies/`, `theme/` (copy of the live theme source).
 
@@ -21,12 +27,12 @@ Written 2026-10-22 from the cloud session "AI dropshipping store brainstorm" (br
 - Proposed autonomy split (user wanted this): the agent acts alone on draft edits, unpublished-theme edits, margin checks, crawls, speed tests, $0 test orders, research tables. The agent asks first on publishing, spending money, prices under 70% margin, supplier outreach, deleting things, and anything customers see.
 - The user's stated "done" definition (gates), pasted by them, is in section 8. Their role prompt also asked for positions (curated catalog, ads as evidence plus brand fit, lean site with rich product pages, copy patterns not copy), source labels (my site and competitor sites available now; Meta Ad Library, TikTok Creative Center, Google Ads Transparency Center need the user's browser; social carousels off-limits), an extract table, and a pre-mortem (likeliest failure: selling supplier products nobody has touched; prevention: samples first, no claims, original photos, $0 test orders).
 
-## 3. Products and margins (live state read from Shopify 2026-10-22)
+## 3. Products and margins (live state read from Shopify 2026-10-23)
 | Product | Variant | Price | Landed | Net margin |
 |---|---|---|---|---|
-| Lumova Filtered Handheld Showerhead (product id 15431900332280, template `lumova-shower`, DRAFT) | Complete Set: showerhead + 1.5 m hose + chrome shower-arm adapter with holder + thread tape + 5 cartridges (CJ Suit 12) | $59.99 | $15.12 ($3.19 + $11.93 shipping) | 71.4% |
+| Lumova Handheld Shower Set (product id 15431900332280, template `lumova-shower`, DRAFT; was titled "Lumova Filtered Handheld Showerhead" until 2026-10-22) | Complete Set: showerhead + 1.5 m hose + chrome shower-arm adapter with holder + thread tape + 5 cartridges (CJ Suit 12) | $59.99 | $15.12 ($3.19 + $11.93 shipping) | 71.4% |
 | | Showerhead + 5 cartridges, no hose (Suit 1) | $44.99 | $10.26 | 73.6% |
-| | Refill 3-Pack | $22.99 | $5.83 | ~70% |
+| | Refill 3-Pack | $22.99 (was $19.99 when built) | $5.83 | ~70% |
 | Lumova Single-Blade Safety Razor (id 15431900430584, template `lumova-razor`, DRAFT) | Rose Gold Set: razor + stand + 10 blades in a kraft box | $44.99 | $10.89 | 72.2% |
 Archived: patches (15431903838456), face/brow razors (15431903871224), eye patches (15431903936760), "Lumova Shower + Razor Bundle" $99.99 (15436976750840, not created here). Formula, supplier listing links, and every dropped product are in `research/suppliers-and-margins.md`.
 Copy rules: no filtration/chlorine/skin claims; razor is light (about 56 g), never say "weighted"; shipping copy says 7 to 15 business days; free US shipping is intended (margins include shipping cost).
@@ -35,7 +41,7 @@ Copy rules: no filtration/chlorine/skin claims; razor is light (about 56 g), nev
 - Unpublished theme **"Lumova Build (unpublished)"**, id `gid://shopify/OnlineStoreTheme/188222406904`, duplicated from the live Horizon theme (id 188207890680, untouched). Source copies are in `theme/` here.
   - `sections/lumova-landing.liquid`: one section that renders a whole product landing page: hero with arch frame, headline with a [bracketed] circled word, stat bubble, spinning badge, ribbon marquee, "Choose your" variant cards with quantity, add to cart and express checkout, trust lines, optional guarantee box, highlights, comparison table, big-number band, how-it-works steps, FAQ, reviews app block slot, final call to action, sticky mobile add-to-cart bar, product structured data. Copy lives in each product template.
   - `assets/lumova.css` (uses a `.lmv` scope; product photos blend into the pastel frame with `mix-blend-mode: multiply`), `assets/lumova.js` (variant price update, quantity buttons, sticky bar).
-  - `templates/product.lumova-shower.json`, `product.lumova-razor.json`; archived patches/brow/eye-patch templates also exist in the theme (not copied here). Per-product palettes: shower teal `#2F6F6B`, razor clay `#A4553B`.
+  - `templates/product.lumova-shower.json`, `product.lumova-razor.json` (both rewritten by the parallel session on 2026-10-22; the repo copies match live); archived patches/brow/eye-patch templates also exist in the theme (not copied here). Per-product palettes: shower teal `#2F6F6B`, razor clay `#A4553B`.
 - Photos attached: shower product has one image (the head alone); razor product has one image (rose gold razor, blades, stand). Supplier images; need to be replaced with original Higgsfield images (prompts in `prompts/higgsfield-prompts.md`).
 - Image upload path that works: `stagedUploadsCreate` (resource IMAGE, POST), then `curl -F` each returned parameter plus `file=@path` to the returned URL, then `productUpdate(product:{id}, media:[{originalSource: resourceUrl, mediaContentType: IMAGE, alt}])`. Images the user sends mid-turn are visible but not saved to disk; only images at the start of a user message land as files.
 - Policies, shipping, test mode, publishing: the Shopify connector's access cannot do these (no `write_legal_policies`, conditional shipping rate not editable, no password or test-mode API, no theme publish). Existing live facts: only a privacy policy exists; General shipping profile has Standard $8, free over $70, Express $15; a "Zendrop" profile exists (free worldwide). The privacy policy publicly lists the user's home address and personal Gmail; replace both with business ones.
@@ -61,7 +67,7 @@ Copy rules: no filtration/chlorine/skin claims; razor is light (about 56 g), nev
 6. Install Shopify Subscriptions for refills. Decide the refill price ($22.99 is live; it was $19.99 at build).
 7. Find three more products that hit 70%: AliExpress via a paid ZenDrop plan, or other CJ US-warehouse kits (US warehouse cuts shipping a lot). Ideas not yet found: heatless curl kit, shower ritual set, pet bath kit, razor shave kit with glove and bag.
 8. Marketing: collect competitor ads from Meta Ad Library, TikTok Creative Center, Google Ads Transparency Center via the user's browser; angles to test: shower "whole setup in one box, about $3 a month in refills"; razor "cents per blade, less plastic, one blade one pass".
-9. Resolve what the other session did (the $99.99 bundle, the refill price change, any "L7" builder).
+9. Reconcile with the parallel session: it renamed the shower product, rewrote both templates, set the refill to $22.99, and made and archived the $99.99 bundle. Ask the user for its handoff and the L7 builder's report; ask what the new ad plan is.
 
 ## 7. Autonomy system (proposed with the user)
 - Secret `SHOPIFY_ADMIN_TOKEN` with scopes for products, themes, legal policies, shipping, navigation, discounts, orders, analytics, pages. Never in chat.

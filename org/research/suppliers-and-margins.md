@@ -5,14 +5,14 @@ Net margin = (price - landed cost - (2.9% x price + $0.30)) / price. Landed cost
 $29.99 -> $7.83 | $39.99 -> $10.54 | $44.99 -> $11.89 | $59.99 -> $15.96 | $69.99 -> $18.67.
 Returns, refunds, chargebacks and sample costs are not included (plan 3-8%).
 
-## Live products (checked in Shopify 2026-10-22)
+## Live products (checked in Shopify 2026-10-23)
 | Product | Variant | Price | Landed | Net margin |
 |---|---|---|---|---|
-| Lumova Filtered Handheld Showerhead (id 15431900332280) | Complete Set (showerhead + hose + arm adapter + 5 cartridges) | $59.99 | $15.12 | 71.4% |
+| Lumova Handheld Shower Set (id 15431900332280, renamed 2026-10-22) | Complete Set (showerhead + hose + arm adapter + 5 cartridges) | $59.99 | $15.12 | 71.4% |
 | same | Showerhead + 5 cartridges (no hose) | $44.99 | $10.26 | 73.6% |
-| same | Refill 3-Pack | $22.99 (was $19.99; changed by someone else after the original build) | $5.83 | about 70% |
+| same | Refill 3-Pack | $22.99 (was $19.99 when this session built it; the parallel session changed it) | $5.83 | about 70% |
 | Lumova Single-Blade Safety Razor (id 15431900430584) | Rose Gold Set (razor + stand + 10 blades) | $44.99 | $10.89 | 72.2% |
-Archived: patches (15431903838456), face/brow razors (15431903871224), eye patches (15431903936760), and "Lumova Shower + Razor Bundle" $99.99 (15436976750840, created by another session, not by this one).
+Archived: patches (15431903838456), face/brow razors (15431903871224), eye patches (15431903936760), and "Lumova Shower + Razor Bundle" $99.99 (15436976750840, created by the parallel session, archived/cancelled).
 
 ## CJ Dropshipping
 - Shower listing: https://www.cjdropshipping.com/product/replacement-shower-filter-for-held-showerhead---high-output-shower-water-filter-to-remove-chlorine-fluoride-and-hard-water-p-2604190751231614300.html (SKU CJYD2842575). Listing title claims chlorine, fluoride, hard water removal; the page shows no cartridge material or proof, so we make no filtration claims.
