@@ -100,6 +100,7 @@ Everything below is in this folder. If a fact here disagrees with the transcript
 | Supplier photos the user sent (shower kit, razor) | `assets/supplier-photos/1.jpg` to `10.jpg` |
 | Page renders (desktop and mobile) for shower, razor, patches, face razor, eye patches, plus the friend's Luminyx store | `assets/screenshots/` |
 | Scripts: mock Liquid render, Playwright screenshots, AliExpress and CJ probes, benchmark of the friend's store | `scripts/` (session-local helpers; paths inside point at the old sandbox) |
+| Every URL mentioned in the session, grouped by site | `LINKS.md` |
 | Theme source (section, CSS, JS, two product templates) | `theme/` |
 | Research, prompts, policies | `research/`, `prompts/`, `policies/` |
 
