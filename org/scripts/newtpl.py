@@ -1,0 +1,29 @@
+import json
+def mk(accent,eyebrow,subhead,ship,trust,marq,hlh,cmph,cmpt,big,mt,sk,sh,fh,fs,fc,hl,rows,steps,faq):
+    b={};order=[]
+    for i,(t,x) in enumerate(hl,1): b['h%d'%i]={'type':'highlight','settings':{'title':t,'text':x}};order.append('h%d'%i)
+    for i,(l,u,t) in enumerate(rows,1): b['r%d'%i]={'type':'row','settings':{'label':l,'us':u,'them':t}};order.append('r%d'%i)
+    for i,(t,x) in enumerate(steps,1): b['s%d'%i]={'type':'step','settings':{'title':t,'text':x}};order.append('s%d'%i)
+    for i,(q,a) in enumerate(faq,1): b['q%d'%i]={'type':'faq','settings':{'q':q,'a':a}};order.append('q%d'%i)
+    s=dict(accent=accent,eyebrow=eyebrow,subhead=subhead,shipping_note=ship,trust_two=trust,marquee=marq,hl_heading=hlh,cmp_heading=cmph,cmp_them=cmpt,math_big=big,math_text=mt,steps_kicker=sk,steps_heading=sh,final_heading=fh,final_sub=fs,final_cta=fc)
+    return {'sections':{'main':{'type':'lumova-landing','blocks':b,'block_order':order,'settings':s}},'order':['main']}
+S="Ships in 7 to 15 business days"
+T={
+'patches':mk('#9C4A6B','Blemish patches','Cute star-shaped hydrocolloid patches that cover a blemish and keep your hands off it. Slim enough to wear under makeup.',S,'Stock up with the 480-patch kit','Star-shaped patches  *  Slim under makeup  *  240 per pack  *  Cover it, leave it  *  ','Small, simple, a little fun','Lumova vs. bare skin','Bare skin','240 patches','One pack covers a lot of blemishes. The 480-patch kit keeps you stocked for months.','How to use','Four easy steps','Keep a pack on hand.','Choose 240 patches, or save with the 480-patch kit.','Get the patches',
+ [('Covers the spot','A small barrier over a blemish helps keep fingers and dust away.'),('Slim and clear','Thin enough to sit flat under makeup.'),('Star shapes','A little fun for a routine that usually is not.'),('Plenty in every pack','240 patches per pack, or 480 in the best-value kit.')],
+ [('Touching','Covered, so less picking','Easy to pick at'),('Under makeup','Slim and flat','Bare spot'),('Look','Fun star shapes','Nothing'),('Supply','240 to 480 patches','A few at a time')],
+ [('Clean','Wash and fully dry the area.'),('Press','Peel a patch and press it gently over the spot.'),('Leave it','Wear it for several hours or overnight.'),('Peel','Peel off and throw away.')],
+ [('Are these a treatment?','No. Patches cover blemishes and are a cosmetic product. For ongoing skin concerns, ask a dermatologist.'),('Can I use them on sensitive skin?','Patch-test first and stop if irritation happens. Do not use on broken skin.'),('How long do I wear one?','Many people wear a patch for several hours or overnight.'),('How long does shipping take?','Orders ship in 7 to 15 business days.')]),
+'facerazor':mk('#3F5A7A','Face and brow razors','Precise little razors for shaping brows and shaving fine facial hair. Forty in a pack, so you stay stocked for months.',S,'40 razors in every pack','Made for brows  *  40 per pack  *  Always fresh  *  One-minute routine  *  ','Small tool, clean finish','Lumova vs. big razors','Everyday razor','40 razors','One pack lasts for months, so you always start with a sharp edge.','How to use','Four quick steps','Keep a pack in the drawer.','Forty brow and face razors in one pack.','Get the 40-pack',
+ [('Made for small areas','A compact head that is easy to steer around brows.'),('Always fresh','With 40 in a pack, you can start every time with a sharp edge.'),('Light in the hand','Easy to control, so short light strokes do the job.'),('One-minute routine','A quick step you can do at home, no appointment needed.')],
+ [('Precision','Small head made for brows','Big razors made for legs'),('Supply','40 razors in a pack','A few blades at a time'),('Cost','Pennies per use','Salon price each visit'),('Time','About a minute at home','Book an appointment')],
+ [('Prep','Start with clean, dry skin.'),('Angle','Hold the razor at a shallow angle.'),('Glide','Use short, light strokes. Do not press.'),('Finish','Rinse, moisturize, and discard the razor when it dulls.')],
+ [('Where can I use these?','They are made for brows and fine facial hair. Avoid broken or irritated skin.'),('How many are in a pack?','40 razors.'),('Are they safe around kids?','Keep them out of reach of children.'),('How long does shipping take?','Orders ship in 7 to 15 business days.')]),
+'eyepatches':mk('#8A6A2F','Hydrating eye patches','Soft, cooling patches for a calm minute in your routine. Thirty pairs in every jar.',S,'30 pairs in every jar','Cool and refreshing  *  30 pairs per jar  *  Easy daily ritual  *  Place, relax, peel  *  ','A small reset, every day','Lumova vs. skipping it','No patches','30 pairs','One jar covers about a month of daily use.','How to use','Four calm steps','Make it a daily ritual.','One jar, thirty pairs.','Get the jar',
+ [('Hydrating feel','A moisturizing patch for the delicate under-eye area.'),('Cool and refreshing','A calm minute that feels good in any routine.'),('Easy to use','Place, relax, peel. No mess, no rinsing.'),('A full jar','30 pairs, about a month of daily use.')],
+ [('Feel','Cool and hydrating','Nothing extra'),('Time','10 to 15 minutes, hands-free','Skipped'),('Supply','30 pairs in a jar','A few at a time'),('Routine','A small daily ritual','Easy to forget')],
+ [('Cleanse','Wash your face and pat dry.'),('Place','Put a patch under each eye.'),('Relax','Leave them on for 10 to 15 minutes.'),('Peel','Peel off and pat any extra serum into your skin.')],
+ [('Do these treat dark circles?','They hydrate and feel refreshing. They are a cosmetic product, not a medical treatment.'),('Can I use them every day?','Many people use them daily. Patch-test first and stop if irritation happens.'),('How many are in a jar?','30 pairs, which is 60 patches.'),('How long does shipping take?','Orders ship in 7 to 15 business days.')]),
+}
+for k,v in T.items(): open('theme/templates/product.lumova-%s.json'%k,'w').write(json.dumps(v))
+print('ok')

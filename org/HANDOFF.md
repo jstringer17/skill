@@ -89,3 +89,20 @@ Current status: gates 1-4 fail or cannot run (store locked, drafts, supplier pho
 - Shopify admin: https://admin.shopify.com/store/wrpnhp-8d (shower https://admin.shopify.com/store/wrpnhp-8d/products/15431900332280, razor https://admin.shopify.com/store/wrpnhp-8d/products/15431900430584)
 - Supplier and AliExpress links: `research/suppliers-and-margins.md`
 - Earlier sessions this session read: "Product selection criteria with token conservation", "Dropshipping marketing brain setup", "AI dropshipping marketing brain", "Shopify product research continuation" (they live in the user's Claude Code sessions list; a repo `jstringer17/my-project-` held the earlier brain files).
+
+## 10. Full session record (added after "the handoff didn't hand everything off")
+
+Everything below is in this folder. If a fact here disagrees with the transcript, the transcript is what was actually said; the live Shopify store is what is actually true.
+
+| What | Where |
+|---|---|
+| Condensed transcript of the whole session: every user message (up to 6,000 chars, so pasted CJ/AliExpress tables and the "DONE ONLY WHEN" prompt are included), every assistant message, every tool call (400 chars), tool results (500 chars) | `transcript/session-transcript-part1.md`, `part2.md` |
+| Supplier photos the user sent (shower kit, razor) | `assets/supplier-photos/1.jpg` to `10.jpg` |
+| Page renders (desktop and mobile) for shower, razor, patches, face razor, eye patches, plus the friend's Luminyx store | `assets/screenshots/` |
+| Scripts: mock Liquid render, Playwright screenshots, AliExpress and CJ probes, benchmark of the friend's store | `scripts/` (session-local helpers; paths inside point at the old sandbox) |
+| Theme source (section, CSS, JS, two product templates) | `theme/` |
+| Research, prompts, policies | `research/`, `prompts/`, `policies/` |
+
+Session IDs: this session `session_01JSobWDKqu3VsKisucmKws1`; the local transcript was `8e33c7bf-bd10-5d51-9d75-6b5b8fdf6a09`. The parallel session (L7 builder, commit `8432352`) is not in this repo; its report was never received.
+
+Redactions: the user's personal email, home address and any tokens are removed from everything here. Never commit them.
