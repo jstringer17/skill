@@ -3,23 +3,11 @@
 Extracted from the transcript, grouped by site.
 
 ## admin.shopify.com
-- https://admin.shopify.com/st
-- https://admin.shopify.com/sto
-- https://admin.shopify.com/store/
-- https://admin.shopify.com/store/wrpn
-- https://admin.shopify.com/store/wrpnh
-- https://admin.shopify.com/store/wrpnhp
-- https://admin.shopify.com/store/wrpnhp-
-- https://admin.shopify.com/store/wrpnhp-8d
-- https://admin.shopify.com/store/wrpnhp-8d/
 - https://admin.shopify.com/store/wrpnhp-8d/products/15431900332280
 - https://admin.shopify.com/store/wrpnhp-8d/products/15431900430584
 - https://admin.shopify.com/store/wrpnhp-8d/products/15431903838456
 - https://admin.shopify.com/store/wrpnhp-8d/products/15431903871224
 - https://admin.shopify.com/store/wrpnhp-8d/products/15431903936760
-- https://admin.shopify.com/store/wrpnhp-8d/se
-- https://admin.shopify.com/store/wrpnhp-8d/sett
-- https://admin.shopify.com/store/wrpnhp-8d/setti
 - https://admin.shopify.com/store/wrpnhp-8d/settings/domains/confirm?host=acornvale.store
 - https://admin.shopify.com/store/wrpnhp-8d/settings/domains/confirm?host=alviroo.store
 - https://admin.shopify.com/store/wrpnhp-8d/settings/domains/confirm?host=alvorra.net
@@ -422,9 +410,7 @@ Extracted from the transcript, grouped by site.
 - https://admin.shopify.com/store/wrpnhp-8d/settings/general/store-contact-details?storeName=PureFlow+Wellness
 
 ## cjdropshipping.com
-- https://cjdropshipping.com
 - https://cjdropshipping.com/search/shower+filter.html
-- https://www.cjdropshipping.com
 - https://www.cjdropshipping.com/product/anti-acne-patch-removes-pimples-skin-care-p-2406200531061620700.html
 - https://www.cjdropshipping.com/product/beauty-dechlorinating-dual-filter-shower-head-p-2511300649351619000.html
 - https://www.cjdropshipping.com/product/clear-patch-removes-acne-facial-cover-p-2406240744361620700.html
@@ -434,7 +420,6 @@ Extracted from the transcript, grouped by site.
 - https://www.cjdropshipping.com/product/e-commerce-hot-selling-models-explosive-models-diamond-pattern-manual-razor-razor-razor-safety-double-sided-razor-p-1372495649286787072.html
 - https://www.cjdropshipping.com/product/eelhoe-acne-relief-mask-patch-is-a-gentle-non-irritating-acne-mask-that-helps-to-reduce-acne-marks-and-heal-acne.-p-1833038670828818432.html
 - https://www.cjdropshipping.com/product/eelhoe-collagen-gold-eye-mask-firming-eye-patches-for-dark-circles-and-puffy-eyes-p-1831952624384888832.html
-- https://www.cjdropshipping.com/product/manual-vintage-razor-mens-razor-metal-gift-p-C6958D60-3561-4AA1-A
 - https://www.cjdropshipping.com/product/manual-vintage-razor-mens-razor-metal-gift-p-C6958D60-3561-4AA1-AC23-8D32F5B4313D.html
 - https://www.cjdropshipping.com/product/replacement-shower-filter-for-held-showerhead---high-output-shower-water-filter-to-remove-chlorine-fluoride-and-hard-water-p-2604190751231614300.html
 - https://www.cjdropshipping.com/product/silicone-ice-face-roller-contour-shrink-pores-remove-dark-circles-massage-skin-beauty-facial-roller-for-eyes-neck-skin-care-tool-p-1764139609648271360.html
@@ -455,21 +440,15 @@ Extracted from the transcript, grouped by site.
 - https://www.aliexpress.com/w/wholesale-{slug}.html
 
 ## shopify-staged-uploads.storage.googleapis.com
-- https://shopify-staged-uploads.storage.googleapis.com/
-- https://shopify-staged-uploads.storage.googleapis.com/tmp/86000795896/files/
 - https://shopify-staged-uploads.storage.googleapis.com/tmp/86000795896/files/3d828683-2d2d-44bf-9dd4-a703f7e7a827/lumova-set-contents.jpg
-- https://shopify-staged-uploads.storage.googleapis.com/tmp/86000795896/files/417dcfb6-de0a-49dd-af76
 - https://shopify-staged-uploads.storage.googleapis.com/tmp/86000795896/files/417dcfb6-de0a-49dd-af76-70be4dc2878d/lumova-razor-set.jpg
 
 ## github.com
 - https://github.com/jstringer17/headroom
-- https://github.com/jstringer17/skill
 - https://github.com/jstringer17/skill/blob/claude/youthful-cerf-wtuztd/org/HANDOFF.md
 - https://github.com/jstringer17/skill/pull/new/claude/youthful-cerf-wtuztd
 
 ## 5ykszq-ie.myshopify.com
-- https://5ykszq-ie.myshopify.com
-- https://5ykszq-ie.myshopify.com/
 - https://5ykszq-ie.myshopify.com/#highlights
 
 ## frontend.cjdropshipping.com
@@ -478,26 +457,21 @@ Extracted from the transcript, grouped by site.
 - https://frontend.cjdropshipping.com/egg/cj/validation.html?rd=https://www.cjdropshipping.com/product/replacement-shower-filter-for-held-showerhead---high-output-shower-water-filter-to-remove-chlorine-fluoride-and-hard-water-p-2604190751231614300.html
 
 ## jolie.com
-- https://jolie.com
 - https://jolie.com/
 - https://www.jolie.com/
 
 ## storage.googleapis.com
-- https://storage.googleapis.com/shopify-staged-uploads/tmp/
 - https://storage.googleapis.com/shopify-staged-uploads/tmp/86000795896/files/0eedfad4-87bb-4caa-9536-457d31515069/lumova-showerhea
 - https://storage.googleapis.com/shopify-staged-uploads/tmp/86000795896/files/3d828683-2d2d-44bf-9dd4-a703f7e7a827/lumova-set-contents.jpg</Location
 
 ## youtube.com
 - https://www.youtube.com/results?search_query=davie+fogarty+AI+dropshipping+stranger
-- https://www.youtube.com/watch?v=MxjwiA7cCpI
 - https://www.youtube.com/watch?v=MxjwiA7cCpI&hl=en
 
 ## 86ocplezexhaqfvo-86000795896.shopifypreview.com
-- https://86ocplezexhaqfvo-86000795896.shopifypreview.com/products_preview?preview_key=c5594fe6a813f614e65e13ae09da2e74
 - https://86ocplezexhaqfvo-86000795896.shopifypreview.com/products_preview?preview_key=c5594fe6a813f614e65e13ae09da2e74&preview_theme_id=188222406904
 
 ## canopy.co
-- https://canopy.co
 - https://canopy.co/
 
 ## d8j0ntlcm91z4.cloudfront.net
@@ -509,28 +483,18 @@ Extracted from the transcript, grouped by site.
 - https://fonts.googleapis.com/css2?family=Fraunces:opsz
 
 ## supply.co
-- https://supply.co
 - https://supply.co/
 
 ## wrpnhp-8d.myshopify.com
-- https://wrpnhp-8d.myshopify.com
 - https://wrpnhp-8d.myshopify.com/
 
 ## tradelle.io
 - https://www.tradelle.io/hi/blog/10-successfu
 - https://www.tradelle.io/zh-hant/blog/10-successful-dropshippers-to-learn-from/
 
-## 86ocplezexhaqfvo-86000795896.sh
-- https://86ocplezexhaqfvo-86000795896.sh
 
-## 86ocplezexhaqfvo-86000795896.shopi
-- https://86ocplezexhaqfvo-86000795896.shopi
 
-## adm
-- https://adm
 
-## admin.sho
-- https://admin.sho
 
 ## app.zendrop.com
 - https://app.zendrop.com
